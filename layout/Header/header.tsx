@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Router from 'next/router'
 import NProgress from 'nprogress'
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import Link from 'next/link'
 
 Router.events.on('routeChangeStart', () => {
@@ -11,10 +11,6 @@ Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
 
 const Header: FC = () => {
-  useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log('header render')
-  }, [])
   return (
     <>
       <Head>
@@ -24,8 +20,9 @@ const Header: FC = () => {
       </Head>
       <header>
         <nav>
-          <Link href="/">Homepage</Link>
-          <Link href="/about">About</Link>
+          <Link href="/">Homepage </Link>
+          <Link href="/news">News </Link>
+          <Link href="/about">About </Link>
         </nav>
       </header>
     </>
