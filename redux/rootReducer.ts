@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux'
 import profileReducer from './Profile/Profile.reducer'
-import { IProfileState } from './Profile/actionTypes'
 
-export interface StoreState {
-  profile: IProfileState
-}
-
-export default combineReducers({
+const rootReducer = combineReducers({
   profile: profileReducer,
 })
+
+export type TStoreState = ReturnType<typeof rootReducer>
+export default rootReducer

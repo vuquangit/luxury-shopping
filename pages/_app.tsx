@@ -1,6 +1,6 @@
 import React from 'react'
-import App from 'next/app'
-import type { AppProps, AppContext } from 'next/app'
+// import App from 'next/app'
+import type { AppProps /*, AppContext */ } from 'next/app'
 import { Provider } from 'react-redux'
 
 import { useStore } from 'redux/store'
@@ -15,10 +15,9 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   )
 }
 
-MyApp.getInitialProps = async (appContext: AppContext) => {
-  const appProps = await App.getInitialProps(appContext)
-
-  return { ...appProps }
-}
+// MyApp.getInitialProps = async (appContext: AppContext) => {
+//   const appProps = await App.getInitialProps(appContext)
+//   return { ...appProps }
+// }
 
 export default MyApp

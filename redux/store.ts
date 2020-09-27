@@ -4,11 +4,11 @@ import thunkMiddleware from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { useMemo } from 'react'
 
-import rootReducer, { StoreState } from './rootReducer'
+import rootReducer, { TStoreState } from './rootReducer'
 
 let store: any
 
-function initStore(initialState?: StoreState) {
+function initStore(initialState?: TStoreState) {
   const isDevEnv: boolean = process.env.NODE_ENV === 'development'
 
   const middlewares = isDevEnv
@@ -25,7 +25,7 @@ function initStore(initialState?: StoreState) {
   )
 }
 
-export const initializeStore = (preloadedState?: StoreState) => {
+export const initializeStore = (preloadedState?: TStoreState) => {
   let _store = store ?? initStore(preloadedState)
 
   // After navigating to a page with an initial Redux state, merge that state
@@ -47,7 +47,7 @@ export const initializeStore = (preloadedState?: StoreState) => {
   return _store
 }
 
-export function useStore(initialState: any) {
+export const useStore = (initialState: TStoreState) => {
   const store = useMemo(() => initializeStore(initialState), [initialState])
   return store
 }

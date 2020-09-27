@@ -1,4 +1,3 @@
-import { merge } from 'lodash'
 import * as actionTypes from './actionTypes'
 
 const initialState: actionTypes.IProfileState = {
@@ -15,7 +14,7 @@ const profileReducer = (
     case actionTypes.PROFILE_UPDATE:
       return {
         ...state,
-        data: merge(state.data, action.payload),
+        data: { ...state.data, ...action.payload },
       }
     case actionTypes.PROFILE_CLEAR:
       return {
