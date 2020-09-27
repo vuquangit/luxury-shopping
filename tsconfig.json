@@ -22,5 +22,5 @@
     "types": ["node", "jest"]
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "test/testUtils.js"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "test/testUtils.js", "repository/index.js"]
 }

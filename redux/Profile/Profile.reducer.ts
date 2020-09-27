@@ -3,7 +3,6 @@ import * as actionTypes from './actionTypes'
 const initialState: actionTypes.IProfileState = {
   isFetching: false,
   data: {},
-  error: false,
 }
 
 const profileReducer = (
@@ -19,9 +18,9 @@ const profileReducer = (
     case actionTypes.PROFILE_CLEAR:
       return {
         ...state,
-        data: { name: '' },
-        error: false,
         isFetching: false,
+        data: { name: '' },
+        error: '',
       }
 
     default:

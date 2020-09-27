@@ -8,10 +8,10 @@ const {
 const {
   WebpackBundleSizeAnalyzerPlugin,
 } = require('webpack-bundle-size-analyzer')
-
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
+
 const withEnv = (config = {}) => {
   // when started in development mode `next dev` or `npm run dev` regardless of the value of STAGING environmental variable
   const isDev = config.phase === PHASE_DEVELOPMENT_SERVER
@@ -67,6 +67,7 @@ const nextConfig = (phase, { defaultConfig }) =>
     },
     phase,
     optimizeImages: false,
+    experimental: { scss: true },
   })
 
 module.exports = nextConfig

@@ -8,7 +8,7 @@ import rootReducer, { TStoreState } from './rootReducer'
 
 let store: any
 
-function initStore(initialState?: TStoreState) {
+const initStore = (initialState?: TStoreState) => {
   const isDevEnv: boolean = process.env.NODE_ENV === 'development'
 
   const middlewares = isDevEnv
@@ -25,7 +25,7 @@ function initStore(initialState?: TStoreState) {
   )
 }
 
-export const initializeStore = (preloadedState?: TStoreState) => {
+export const initializeStore = (preloadedState?: TStoreState): any => {
   let _store = store ?? initStore(preloadedState)
 
   // After navigating to a page with an initial Redux state, merge that state
@@ -47,7 +47,7 @@ export const initializeStore = (preloadedState?: TStoreState) => {
   return _store
 }
 
-export const useStore = (initialState: TStoreState) => {
+export const useStore = (initialState: TStoreState): any => {
   const store = useMemo(() => initializeStore(initialState), [initialState])
   return store
 }

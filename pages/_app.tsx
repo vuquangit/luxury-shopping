@@ -2,8 +2,9 @@ import React from 'react'
 // import App from 'next/app'
 import type { AppProps /*, AppContext */ } from 'next/app'
 import { Provider } from 'react-redux'
-
 import { useStore } from 'redux/store'
+
+import '../styles/globals.scss'
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   const store = useStore(pageProps.initialReduxState)

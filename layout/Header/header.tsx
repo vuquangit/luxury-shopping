@@ -15,14 +15,17 @@ const Header: FC = () => {
     <>
       <Head>
         <title>Luxury Shopping</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="/nprogress.css" />
+        <link rel="icon" href="/image/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/css/nprogress.css" />
       </Head>
       <header>
         <nav>
           <Link href="/">Homepage </Link>
-          <Link href="/news">News </Link>
-          <Link href="/about">About </Link>
+          <Link href="/new">New </Link>
+          <Link href="/women">Women </Link>
+          <Link href="/men">Men </Link>
+          <Link href="/art-of-living">Art Of Living </Link>
+          <Link href="/magazine">Magazine </Link>
         </nav>
       </header>
     </>

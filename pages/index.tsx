@@ -7,6 +7,10 @@ import { updateProfile } from 'redux/Profile/Profile.action'
 import { IProfileData } from 'redux/Profile/actionTypes'
 import { TStoreState } from 'redux/rootReducer'
 
+import Repository from 'repository'
+
+const stocksRepository = Repository.get('stocks')
+
 type Props = {}
 
 const HomePage: FC<Props> = () => {
@@ -19,7 +23,24 @@ const HomePage: FC<Props> = () => {
 
   useEffect(() => {
     dispatch(updateProfile({ name: 'Quang', age: 18 }))
+
+    fetchAllStock()
   }, [dispatch])
+
+  const fetchAllStock = () => {
+    const paramsRequest = {}
+
+    stocksRepository
+      .fetchAllStock(paramsRequest)
+      .then((response: any) => {
+        // eslint-disable-next-line no-console
+        console.log('stocks', response.data)
+      })
+      .catch((error: any) => {
+        // eslint-disable-next-line no-console
+        console.log(error)
+      })
+  }
 
   return (
     <DefaultLayout>

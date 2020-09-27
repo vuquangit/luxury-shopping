@@ -3,13 +3,15 @@ export const PROFILE_CLEAR = 'PROFILE_CLEAR'
 
 export interface IProfileData {
   name?: string
+  firstName?: string
+  lastName?: string
   age?: number
 }
 
 export interface IProfileState {
   isFetching: boolean
   data: IProfileData
-  error: any
+  error?: string
 }
 
 interface ProfileUpdateAction {
