@@ -1,10 +1,11 @@
-import { applyMiddleware, compose, createStore } from 'redux'
+import { applyMiddleware, compose, createStore, Store } from 'redux'
 import { createLogger } from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { useMemo } from 'react'
 
 import rootReducer, { TStoreState } from './rootReducer'
+import api from 'Middlewares/api'
 
 let store: any
 
@@ -12,8 +13,8 @@ const initStore = (initialState?: TStoreState) => {
   const isDevEnv: boolean = process.env.NODE_ENV === 'development'
 
   const middlewares = isDevEnv
-    ? [thunkMiddleware, createLogger()]
-    : [thunkMiddleware]
+    ? [thunkMiddleware, api, createLogger()]
+    : [thunkMiddleware, api]
   const middlewareEnhancer = applyMiddleware(...middlewares)
 
   return createStore(
@@ -25,7 +26,9 @@ const initStore = (initialState?: TStoreState) => {
   )
 }
 
-export const initializeStore = (preloadedState?: TStoreState): any => {
+export const initializeStore = (
+  preloadedState?: TStoreState
+): Store<TStoreState> => {
   let _store = store ?? initStore(preloadedState)
 
   // After navigating to a page with an initial Redux state, merge that state
@@ -47,7 +50,7 @@ export const initializeStore = (preloadedState?: TStoreState): any => {
   return _store
 }
 
-export const useStore = (initialState: TStoreState): any => {
-  const store = useMemo(() => initializeStore(initialState), [initialState])
+export const useStore = (preloadedState?: TStoreState): any => {
+  const store = useMemo(() => initializeStore(preloadedState), [preloadedState])
   return store
 }

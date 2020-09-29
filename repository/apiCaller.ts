@@ -1,14 +1,11 @@
-import axios from 'axios'
+import axios, { Method, AxiosPromise } from 'axios'
 
 // axios.defaults.headers.common['X-CSRF-Token'] = document.querySelector('meta[name=csrf-token]').getAttribute('content')
 axios.defaults.headers.common['Accept'] = 'application/json'
 
 axios.interceptors.response.use(
-  function(response) {
-    return response
-  },
-
-  function(error) {
+  (response) => response,
+  (error) => {
     if (error.response && error.response.status === 401) {
       alert('You need login!')
     } else if (error.response && error.response.status === 400) {
@@ -23,11 +20,18 @@ axios.interceptors.response.use(
   }
 )
 
-export default function apiCaller (method = 'GET', url, data = null, params = null) {
+const apiCaller = (
+  method: Method = 'GET',
+  url = '',
+  data = null,
+  params = null
+): AxiosPromise<any> => {
   return axios({
     method,
     url,
     data,
-    params
+    params,
   })
 }
+
+export default apiCaller

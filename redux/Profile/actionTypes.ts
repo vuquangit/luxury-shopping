@@ -9,14 +9,14 @@ export interface IProfileData {
 }
 
 export interface IProfileState {
-  isFetching: boolean
-  data: IProfileData
-  error?: string
+  readonly isFetching: boolean
+  readonly data: IProfileData
+  readonly error?: string
 }
 
 interface ProfileUpdateAction {
   type: typeof PROFILE_UPDATE
-  payload: IProfileData
+  payload?: IProfileData
 }
 
 interface ProfileClearAction {

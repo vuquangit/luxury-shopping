@@ -1,0 +1,45 @@
+{
+    "id": 1,
+    "productName": "DAMIER CLASSIC BLANKET",
+    "productCode": "M76561",
+    "productType": "Bag",
+    "productCategories": "Blackpacks",
+    "productColor": "Gray",
+    "productMaterial": ["Monogram"],
+    "productFor": [
+        "men"
+    ],
+    "priceValue": "1510000",
+    "productSizes": [
+        {
+            "size": 34,
+            "availability": "stocking"
+        },
+        {
+            "size": 36,
+            "availability": "stocking"
+        },
+        {
+            "size": 38,
+            "availability": "outOfStock"
+        }
+    ],
+    "productDescription": "The Damier Classic blanket is a wool cover-up with a hint of cashmere for stylish warmth. Featuring the oversized Damier pattern and statement stitching, this piece has a striking aesthetic. The Louis Vuitton Paris signature on all four corners lends extra refinement to this sumptuously soft piece.",
+    "productFeatures": {
+        "title": "70.9 x 55.1 inches\n(Length x Height x Width)",
+        "detail": [
+            "70.9 x 78.7 inches/180 x 200 cm",
+            "Damier Graphite",
+            "90% wool, 10% cashmere",
+            "Allover jacquard weave",
+            "Oversize Damier pattern",
+            "Stitched finish",
+            "Louis Vuitton Paris signature"
+        ]
+    },
+    "productImages": [
+        "https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton--M76561_PM2_Front%20view.jpg",
+        "https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton--M76561_PM1_Interior%20view.jpg",
+        "https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton--M76561_PM1_Back%20view.jpg"
+    ]
+}

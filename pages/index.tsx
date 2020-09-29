@@ -6,6 +6,7 @@ import { get, isEqual } from 'lodash'
 import { updateProfile } from 'redux/Profile/Profile.action'
 import { IProfileData } from 'redux/Profile/actionTypes'
 import { TStoreState } from 'redux/rootReducer'
+import { updateProduct } from 'redux/Product/Product.action'
 
 import Repository from 'repository'
 
@@ -24,14 +25,16 @@ const HomePage: FC<Props> = () => {
   useEffect(() => {
     dispatch(updateProfile({ name: 'Quang', age: 18 }))
 
+    const params = {}
+
+    dispatch(updateProduct(params))
+
     fetchAllStock()
   }, [dispatch])
 
   const fetchAllStock = () => {
-    const paramsRequest = {}
-
     stocksRepository
-      .fetchAllStock(paramsRequest)
+      .fetchAllStock()
       .then((response: any) => {
         // eslint-disable-next-line no-console
         console.log('stocks', response.data)
