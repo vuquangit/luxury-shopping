@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import { FC } from 'react'
@@ -12,23 +11,16 @@ Router.events.on('routeChangeError', () => NProgress.done())
 
 const Header: FC = () => {
   return (
-    <>
-      <Head>
-        <title>Luxury Shopping</title>
-        <link rel="icon" href="/image/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="/css/nprogress.css" />
-      </Head>
-      <header>
-        <nav>
-          <Link href="/">Homepage </Link>
-          <Link href="/new">New </Link>
-          <Link href="/women">Women </Link>
-          <Link href="/men">Men </Link>
-          <Link href="/art-of-living">Art Of Living </Link>
-          <Link href="/magazine">Magazine </Link>
-        </nav>
-      </header>
-    </>
+    <header>
+      <nav>
+        <Link href="/">Homepage </Link>
+        <Link href="/new">New </Link>
+        <Link href="/women">Women </Link>
+        <Link href="/men">Men </Link>
+        <Link href="/art-of-living">Art Of Living </Link>
+        <Link href="/magazine">Magazine </Link>
+      </nav>
+    </header>
   )
 }
 
