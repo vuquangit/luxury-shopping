@@ -7,11 +7,13 @@
 @import './base/minireset';
 
 // layout
-@import './layout/layout';
+@import './layout';
 
 // pages
-@import './pages/pages';
+@import './pages';
 
 // components
-@import './components/components';
+@import './components';
 
+// elements
+@import './elements'

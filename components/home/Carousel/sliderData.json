@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1601607723/luxury-shoping/home-page/carousel/107145899_3008086659241165_5596852889865444543_o_kfhtcf.jpg",
+        "title": "Title 1",
+        "link": "/magazine",
+        "content_link": "Discover the Collection 1"
+    },
+    {
+        "id": 2,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1601607725/luxury-shoping/home-page/carousel/106264260_3008090335907464_8051516879991048305_o_pueb0b.jpg",
+        "title": "Title 2",
+        "link": "/magazine",
+        "content_link": "Discover the Collection 2"
+    },
+    {
+        "id": 3,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1601607725/luxury-shoping/home-page/carousel/106932944_3008090189240812_5501599273815984110_o_yzjqki.jpg",
+        "title": "Title 3",
+        "link": "/magazine",
+        "content_link": "Discover the Collection 3"
+    },
+    {
+        "id": 4,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1601607725/luxury-shoping/home-page/carousel/107601895_3008090109240820_2000447253718736293_o_af0mjq.jpg",
+        "title": "Title 4",
+        "link": "/magazine",
+        "content_link": "Discover the Collection 4"
+    },
+    {
+        "id": 5,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1601607724/luxury-shoping/home-page/carousel/107632281_3008076815908816_4374252209579907204_o_syf6uu.jpg",
+        "title": "Title 5",
+        "link": "/magazine",
+        "content_link": "Discover the Collection 5"
+    },
+    {
+        "id": 6,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1601607724/luxury-shoping/home-page/carousel/107096520_3008089989240832_7784521455535455182_o_gsqqmz.jpg",
+        "title": "Title 6",
+        "link": "/magazine",
+        "content_link": "Discover the Collection 6"
+    },
+    {
+        "id": 7,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1601607724/luxury-shoping/home-page/carousel/107462944_3008076982575466_2200786741238253567_o_r3gllm.jpg",
+        "title": "Title 7",
+        "link": "/magazine",
+        "content_link": "Discover the Collection 7"
+    },
+    {
+        "id": 8,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1601607723/luxury-shoping/home-page/carousel/108186130_3008089975907500_3409872823033319811_o_okzngt.jpg",
+        "title": "Title 8",
+        "link": "/magazine",
+        "content_link": "Discover the Collection 8"
+    },
+    {
+        "id": 9,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1601607725/luxury-shoping/home-page/carousel/117927475_3129740990409064_1369609993140104769_o_bceqz6.jpg",
+        "title": "Title 9",
+        "link": "/magazine",
+        "content_link": "Discover the Collection 9"
+    },
+    {
+        "id": 10,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1601607723/luxury-shoping/home-page/carousel/107062539_3008089762574188_3824754031781323733_o_zv1nxa.jpg",
+        "title": "Title 10",
+        "link": "/magazine",
+        "content_link": "Discover the Collection 10"
+    }
+]
