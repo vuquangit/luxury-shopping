@@ -4,7 +4,7 @@
   line-height: 1.25rem;
   font-weight: 400;
   color: inherit;
-//   display: inline-block;
+  //   display: inline-block;
   box-sizing: border-box;
   transition: border 0.3s cubic-bezier(0.39, 0.575, 0.565, 1),
     box-shadow 0.3s cubic-bezier(0.39, 0.575, 0.565, 1),
@@ -13,19 +13,19 @@
     box-shadow 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
 
   &--primary {
-    color: $color-gray-100;
-    border: 1px solid $color-red-500;
-    background-color: $color-red-500;
+    color: $color-white;
+    background-color: #19110b;
+    line-height: 1;
 
     &:hover {
-      background-color: $color-red-600;
-      border-color: $color-red-600;
+      color: #19110b;
+      background-color: #eae8e4;
     }
 
-    &:active {
-      background-color: $color-red-700;
-      border-color: $color-red-700;
-    }
+    // &:active {
+    //   background-color: $color-red-700;
+    //   border-color: $color-red-700;
+    // }
   }
 
   &--secondary {
@@ -37,9 +37,9 @@
       background-color: $color-gray-200;
     }
 
-    &:active {
-      background-color: $color-gray-300;
-    }
+    // &:active {
+    //   background-color: $color-gray-300;
+    // }
   }
 
   &:disabled {

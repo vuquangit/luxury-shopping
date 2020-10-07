@@ -1,0 +1,28 @@
+.homepage-new {
+  @include flexbox(stretch, stretch);
+  flex-direction: column;
+
+  @include respond-from(lg) {
+    flex-direction: row;
+  }
+}
+
+@include respond-from(lg) {
+  .homepage-new > * {
+    width: 50%;
+  }
+
+  .homepage-new > :first-child {
+    border-right: 1px solid #eae8e4;
+  }
+
+  .homepage-new > :nth-child(2) {
+    @include flexbox(stretch, center);
+    flex-direction: column;
+  }
+
+  .homepage-new > :nth-child(2) .home-product {
+    height: auto;
+    flex: 1 0 auto;
+  }
+}

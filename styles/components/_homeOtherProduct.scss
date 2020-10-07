@@ -1,0 +1,8 @@
+.homepage-other {
+    @include flexbox(center, center);
+    flex-direction: column;
+  
+    @include respond-from(lg) {
+      flex-direction: row;
+    }
+}

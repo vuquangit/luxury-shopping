@@ -3,7 +3,7 @@ import LazyLoad, { ILazyLoadInstance } from 'vanilla-lazyload'
 import { TProps } from './index'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: Object is possibly 'null'.
+// @ts-ignore
 const Context = createContext()
 
 export const LazyImageProvider: FC = ({ children }) => {

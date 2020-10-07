@@ -6,15 +6,15 @@ export type TProps = {
   src: string
   aspectRatio?: [number, number]
   lazyLoad: any
-  isBackgroundImage: boolean
-  className: string
+  isBackgroundImage?: boolean
+  className?: string
 }
 
 const LazyImage: FC<TProps> = ({
   src,
   aspectRatio = [0, 0],
   lazyLoad,
-  isBackgroundImage = false,
+  isBackgroundImage,
   className = '',
   ...restProps
 }) => {
@@ -34,7 +34,7 @@ const LazyImage: FC<TProps> = ({
           style={{ backgroundImage: `url(${src})` }}
         />
       ) : (
-        <img className={classImage} data-src={src} {...restProps} />
+        <img className={classImage} src={src} {...restProps} />
       )}
     </div>
   )

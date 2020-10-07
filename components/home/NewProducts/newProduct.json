@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1601808438/luxury-shoping/home-page/new-products/93842498_1376660662534221_6427143203815686144_o_lm1fzo.jpg",
+        "title": "PETITE MALLE SOUPLE EMPREINTE",
+        "subtitle": "Shop the Exclusive Prelaunch Now",
+        "link":"/women/handbags",
+        "content_link" : ""
+    },
+    {
+        "id": 2,
+        "image": "",
+        "title": "BOOK AN APPOINTMENT",
+        "subtitle": "Now Available:  Book Your Next Virtual or In-Store Appointment",
+        "link":"/stores",
+        "content_link" : "Find Your Local Store"
+    },
+    {
+        "id": 3,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1601808439/luxury-shoping/home-page/new-products/92625946_1372165446317076_474667471882682368_o_hdoubr.jpg",
+        "title": "FALL FOR NEW SHOES",
+        "subtitle": "",
+        "link":"/women/shoes",
+        "content_link" : ""
+    }
+]

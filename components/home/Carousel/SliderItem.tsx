@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import LazyImage from 'components/elements/LazyImage'
+// import LazyImage from 'components/elements/LazyImage'
 
 type Props = {
   image: string
@@ -11,15 +11,15 @@ type Props = {
 const HomePage: FC<Props> = ({ image = '', link = '' }) => {
   return (
     <a href={link} className="slider__item">
-      {/* <div
+      <div
         className="slider__item--image"
         style={{ backgroundImage: `url(${image})` }}
-      /> */}
-      <LazyImage
+      />
+      {/* <LazyImage
         src={image}
         isBackgroundImage
         className={'slider__item--image'}
-      />
+      /> */}
     </a>
   )
 }

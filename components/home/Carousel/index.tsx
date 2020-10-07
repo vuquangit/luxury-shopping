@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from 'react'
+import { FC, useRef, useState, useMemo } from 'react'
 import Slider from 'react-slick'
 
 import SliderItem from './SliderItem'
@@ -6,7 +6,7 @@ import SliderConfig from './SliderConfigs'
 import sliderData from './sliderData.json'
 import SliderNext from './SliderNext'
 import SliderPrevious from './SliderPrevious'
-import SliderContent from './SliderContent'
+import ProductItemContent from 'components/elements/ProductItem/ProductItemContent'
 
 interface ISliderData {
   id: number
@@ -44,22 +44,24 @@ const CarouselSection: FC = () => {
 
   const afterChange = (index: number) => setCurrentId(index)
 
-  const renderSliderItem = sliderData.map((item: ISliderData, idx) => (
-    <SliderItem {...item} key={idx} />
-  ))
+  const renderSliderItem = useMemo(
+    () =>
+      sliderData.map((item: ISliderData) => (
+        <SliderItem {...item} key={item.id} />
+      )),
+    []
+  )
 
   return (
     <div className="slider">
       <div className="slider__container">
-        <SliderPrevious sliderPrevious={sliderPrevious} />
-        <SliderNext sliderNext={sliderNext} />
         <Slider ref={sliderEl} {...SliderConfig({ afterChange })}>
           {renderSliderItem}
         </Slider>
       </div>
       <a href={sliderData[currentId].link} className="slider__bottom">
         <SliderPrevious sliderPrevious={sliderPrevious} />
-        <SliderContent content={sliderData[currentId]} />
+        <ProductItemContent {...sliderData[currentId]} />
         <SliderNext sliderNext={sliderNext} />
       </a>
     </div>
