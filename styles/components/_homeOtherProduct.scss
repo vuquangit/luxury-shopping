@@ -1,0 +1,16 @@
+.homepage-other {
+    @include flexbox(stretch, stretch);
+    flex-direction: column;
+  
+    @include respond-from(lg) {
+      flex-direction: row;
+    }
+
+    .home-product + .home-product {
+      border-left: 1px solid $border-color;
+    }
+}
+
+.homepage-other  > * {
+  flex-grow: 1;
+}

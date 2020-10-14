@@ -1,9 +1,7 @@
 import { FC } from 'react'
 import { DefaultLayout } from 'layout'
 
-type Props = {}
-
-const NewPage: FC<Props> = () => {
+const NewPage: FC = () => {
   return <DefaultLayout>This is NEW page</DefaultLayout>
 }
 
