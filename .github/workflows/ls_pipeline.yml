@@ -1,0 +1,44 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+# This workflow is triggered on pushes to the repository
+on: push
+
+env:
+  NODE_VERSION: 14.2
+
+jobs:
+  ci:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+        
+    # Note: It is not recommended to cache node_modules, as it can break across Node versions and won't work with npm ci
+    - name: Cache node_modules
+      uses: actions/cache@v2
+      with:
+        path: node_modules
+        key: yarn-packages-{{ checksum "yarn.lock" }}
+        restore-keys: yarn-packages-
+
+    # installation and build then run test
+    - name: yarn install
+      run: yarn install
+    
+    - name: build
+      run: yarn build
+    
+    - name: test
+      run: yarn test-all
