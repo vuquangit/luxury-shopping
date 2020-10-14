@@ -4,6 +4,7 @@ const flow = require('lodash/flow')
 const {
   PHASE_DEVELOPMENT_SERVER,
   PHASE_PRODUCTION_BUILD,
+  PHASE_EXPORT
 } = require('next/constants')
 const {
   WebpackBundleSizeAnalyzerPlugin,
@@ -21,8 +22,11 @@ const withEnv = (config = {}) => {
   // when `next build` or `npm run build` is used
   const isStaging =
     config.phase === PHASE_PRODUCTION_BUILD && process.env.STAGING === '1'
+    // when `next export or `npm run export is used
+  const isExport =
+    config.phase === PHASE_EXPORT
 
-  console.log(`isDev:${isDev}  isProd:${isProd}   isStaging:${isStaging}`)
+  console.log(`isDev:${isDev}  isProd:${isProd}   isStaging:${isStaging}  isExport:${isExport}`)
 
   const env = {}
   config.env = {
@@ -68,6 +72,28 @@ const nextConfig = (phase, { defaultConfig }) =>
     phase,
     optimizeImages: false,
     experimental: { scss: true },
+    exportPathMap: async function (
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      defaultPathMap,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      { dev, dir, outDir, distDir, buildId }
+    ) {
+      return {
+        '/': { page: '/' },
+        '/404': { page: '/404' },
+        '/about': { page: '/about' },
+        '/art-of-living': { page: '/art-of-living' },
+        '/art-of-living/[...all]': { page: '/art-of-living/[...all]' },
+        '/magazine': { page: '/magazine' },
+        '/men': { page: '/men' },
+        '/men/[...all]': { page: '/men/[...all]' },
+        '/new': { page: '/new' },
+        '/new/[...all]': { page: '/new/[...all]' },
+        '/products': { page: '/products' },
+        '/women': { page: '/women' },
+        '/women/[...all]': { page: '/women/[...all]' },
+      }
+    },
   })
 
 module.exports = nextConfig
