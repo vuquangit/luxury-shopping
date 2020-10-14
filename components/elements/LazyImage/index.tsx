@@ -5,7 +5,7 @@ import classNames from 'classnames'
 export type TProps = {
   src: string
   aspectRatio?: [number, number]
-  lazyLoad: any
+  lazyLoad?: any
   isBackgroundImage?: boolean
   className?: string
 }

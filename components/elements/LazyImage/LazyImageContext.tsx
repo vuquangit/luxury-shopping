@@ -60,7 +60,9 @@ export const LazyImageProvider: FC = ({ children }) => {
   return <Context.Provider value={lazyLoad}>{children}</Context.Provider>
 }
 
-export const withLazyImageContext = (Component: FC<TProps>) => (props: any) => (
+export const withLazyImageContext = (Component: FC<TProps>) => (
+  props: JSX.IntrinsicAttributes & TProps & { children?: React.ReactNode }
+): JSX.Element => (
   <Context.Consumer>
     {(context) => <Component {...props} lazyLoad={context} />}
   </Context.Consumer>

@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "jest --watch",
+    "test:ci": "jest --ci",
     "export": "cross-env NEXT_EXPORT=true next build && cross-env NEXT_EXPORT=true next export",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write **/*.{js,ts,tsx}",
