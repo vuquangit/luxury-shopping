@@ -3,11 +3,11 @@
 
 name: Node.js CI
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+# This workflow is triggered on pushes to the repository
+on: push
+
+env:
+  NODE_VERSION: 14.2
 
 jobs:
   ci:
