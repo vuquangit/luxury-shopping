@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import Loadable from 'react-loadable'
-// import ProductItemImage from './ProductItemImage'
+// import Loadable from 'react-loadable'
+import ProductItemImage from './ProductItemImage'
 import ProductItemContent from './ProductItemContent'
-import Loading from './ProductItemImageLoading'
+// import Loading from './ProductItemImageLoading'
 
 type Props = {
   id: number
@@ -22,14 +22,19 @@ const ProductItem: FC<Props> = ({
   content_link,
   aspectRatio = [1, 1],
 }) => {
-  const LoadableComponent = Loadable({
-    loader: () => import('./ProductItemImage'),
-    loading: Loading,
-  })
+  // const LoadableComponent = Loadable({
+  //   loader: () => import('./ProductItemImage'),
+  //   loading: Loading,
+  // })
 
   return (
     <a href={link} className="home-product">
-      <LoadableComponent
+      {/* <LoadableComponent
+        image={image}
+        aspectRatio={aspectRatio}
+        isBackgroundImage
+      /> */}
+      <ProductItemImage
         image={image}
         aspectRatio={aspectRatio}
         isBackgroundImage

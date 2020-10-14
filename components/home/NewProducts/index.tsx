@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useState, useCallback } from 'react'
 import { debounce } from 'lodash'
 import ProductItem from 'components/elements/ProductItem'
 import newProductData from './newProduct.json'
@@ -12,29 +12,33 @@ const NewProducts: FC = () => {
     [10, 5],
   ])
 
-  const [windowWidth, setWindowWidth] = useState<number>(0)
-  useEffect(() => {
-    const debouncedHandleResize = debounce(
-      () => setWindowWidth(window.innerWidth),
-      250
-    )
-
-    window.addEventListener('resize', debouncedHandleResize)
-
-    return () => {
-      window.removeEventListener('resize', debouncedHandleResize)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (windowWidth > 992) {
+  const handleWindowResize = useCallback(() => {
+    if (window.innerWidth > 992) {
       setAspectRatios([
         [10, 12.5],
+        [10, 5],
+        [16, 9],
+      ])
+    } else {
+      setAspectRatios([
+        [10, 5],
         [10, 5],
         [10, 5],
       ])
     }
-  }, [windowWidth])
+  }, [])
+
+  useEffect(() => {
+    handleWindowResize()
+    window.addEventListener(
+      'resize',
+      debounce(() => handleWindowResize(), 250)
+    )
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize)
+    }
+  }, [handleWindowResize])
 
   return (
     <div className="homepage-new">

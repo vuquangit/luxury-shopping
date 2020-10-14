@@ -4,7 +4,7 @@
   padding: 30px;
   text-align: center;
   background-color: #fff;
-  border-bottom: 1px solid #eae8e4;
+  border-bottom: 1px solid $border-color;
 
   &__image {
     width: 100%;
@@ -16,9 +16,16 @@
 
   &__content {
     width: 100%;
-    padding: 6.4vw;
     padding-top: 6.4vw;
     text-align: center;
+
+    @include respond-from(md) {
+      padding-top: 3.125vw;
+    }
+
+    @include respond-from(lg) {
+      padding-top: 3.333vw;
+    }
 
     &--title {
       font-size: 1.75rem;
@@ -57,7 +64,7 @@
       }
 
       .content-link-btn:hover {
-        background-color: #eae8e4;
+        background-color: $border-color;
         color: #19110b;
       }
     }
