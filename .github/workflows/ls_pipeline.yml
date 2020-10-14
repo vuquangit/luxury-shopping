@@ -48,13 +48,30 @@ jobs:
       #   mkdir -p ~/.ssh
       #   ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-      - name: deploy to vercel
+      # - name: deploy to vercel
+      # - uses: actions/checkout@v2
+      # - uses: amondnet/vercel-action@v19
+      #   with:
+      #     vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+      #     github-token: ${{ secrets.VERCEL_GITHUB_TOKEN }} #Optional 
+      #     vercel-args: '--prod' #Optional
+      #     vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+      #     vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
+      #     working-directory: ./
+
       - uses: actions/checkout@v2
-      - uses: amondnet/vercel-action@v19
+      - name: Use Node.js
+        uses: actions/setup-node@v1
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-          github-token: ${{ secrets.VERCEL_GITHUB_TOKEN }} #Optional 
-          vercel-args: '--prod' #Optional
-          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
-          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
-          working-directory: ./
+          node-version: "12.x"
+
+      - name: Install dependencies
+        run: yarn
+
+      - uses: actions/vercel-deployment@0.5.1
+        with:
+          vercelToken: ${{ secrets.VERCEL_TOKEN }}
+          vercelOrgId: ${{ secrets.ORG_ID }}
+          vercelProjectId: ${{ secrets.PROJECT_ID }}
+          githubToken: ${{ secrets.VERCEL_GITHUB_TOKEN }}
+          sourceDirectory: "src"
