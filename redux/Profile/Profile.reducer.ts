@@ -1,3 +1,4 @@
+import { Reducer } from 'redux'
 import * as actionTypes from './actionTypes'
 
 const initialState: actionTypes.IProfileState = {
@@ -5,10 +6,10 @@ const initialState: actionTypes.IProfileState = {
   data: {},
 }
 
-const profileReducer = (
+const profileReducer: Reducer<actionTypes.IProfileState> = (
   state = initialState,
-  action: actionTypes.ProfileActionTypes
-): actionTypes.IProfileState => {
+  action
+) => {
   switch (action.type) {
     case actionTypes.PROFILE_UPDATE:
       return {
