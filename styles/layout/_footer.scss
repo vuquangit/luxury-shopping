@@ -1,5 +1,124 @@
-footer {
+.default-layout__footer {
+  position: relative;
+  flex: 0 0 auto;
+  background: #19110b;
+  padding-left: 6.4vw;
+  padding-right: 6.4vw;
+
+  .footer-breadcrumb {
+    @include flexbox(space-between, flex-start);
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #19110b;
+    border-bottom: 1px solid #392d23;
+  }
+
+  .logo {
+    color: #fff;
+
+    &__wrap {
+      display: block;
+      height: 100%;
+
+      svg {
+        width: 9.375rem;
+        height: 16px;
+      }
+
+      &--text {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+        word-wrap: normal;
+      }
+    }
+  }
+
+  .footer-navigation {
+    @include flexbox(stretch, center);
+    flex-direction: column;
+
+    font-size: 16px;
+    letter-spacing: 0.025rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: #fff;
+
+    &__list {
+      @include flexbox(center, center);
+      flex-wrap: wrap;
+      flex: 1 1 auto;
+      width: 100%;
+
+      text-align: center;
+      padding: 16px 0;
+
+      li {
+        padding: 16px 8px;
+      }
+
+      @include respond-from(md) {
+        justify-content: space-between;
+        padding: 32px 0;
+
+        li {
+          padding: 8px 16px 8px 0;
+        }
+
+        li:last-child {
+          padding: 8px 0;
+        }
+      }
+
+      &--link {
+        cursor: pointer;
+      }
+    }
+
+    hr {
+      width: 100%;
+      background-color: #392d23;
+      border: none;
+      margin: 0;
+      height: 1px;
+      box-sizing: content-box;
+      overflow: visible;
+
+      @include respond-from(md) {
+        display: none;
+      }
+    }
+
+    &__region {
+      cursor: pointer;
+      padding: 40px 0;
+
+      .ls-flag {
+        margin: 0 8px;
+        border: 0;
+        height: 19px;
+        width: 14px;
+      }
+    }
+  }
+
+  .footer-navigation__list > .footer-navigation__region {
+    display: none;
+
+    @include respond-from(md) {
+      display: block;
+      padding: 8px 8px 16px 0;
+    }
+  }
+
+  .footer-navigation > .footer-navigation__region {
     display: block;
-    height: 100px;
-    border-top: solid 1px rgb(139, 139, 139);
+
+    @include respond-from(md) {
+      display: none;
+    }
+  }
 }
