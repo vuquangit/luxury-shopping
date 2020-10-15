@@ -77,8 +77,11 @@ jobs:
           sourceDirectory: "src"
 
       # Set message env for success or failure
-      - if: success()
-      run: echo "Congratulations on your successful release for production"
+      - if: ${{ success() }}
+        run: echo "Congratulations on your successful release for production."
 
-      - if: failure()
-        run: echo "Release production failed, Please try again or release manually"
+      - if: ${{ failure() }}
+        run: echo "Release production failed, Please try again or release manually."
+
+      - if: ${{ cancelled() }}
+        run: echo "Release production cancelled."
