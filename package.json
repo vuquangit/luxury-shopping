@@ -12,7 +12,7 @@
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write **/*.{js,ts,tsx}",
     "lint": "eslint . --ext ts --ext tsx --ext js",
-    "test-all": "yarn lint && yarn type-check && yarn test"
+    "test-all": "yarn lint && yarn type-check && yarn test:ci"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
@@ -53,6 +53,7 @@
     "@types/react-loadable": "^5.5.3",
     "@types/react-redux": "^7.1.9",
     "@types/react-slick": "^0.23.4",
+    "@types/react-test-renderer": "^16.9.3",
     "@types/redux-logger": "^3.0.8",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
@@ -60,6 +61,7 @@
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^10.0.0",
     "babel-plugin-inline-react-svg": "^1.1.1",
+    "cross-env": "^7.0.2",
     "eslint": "^7.9.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-react": "^7.21.1",
@@ -72,6 +74,7 @@
     "postcss-cli": "^8.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.1.2",
+    "react-test-renderer": "^16.13.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "stylelint": "^13.7.1",
