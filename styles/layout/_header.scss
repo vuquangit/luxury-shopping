@@ -1,5 +1,186 @@
 header {
-    display: block;
-    height: 70px;
-    border-bottom: solid 1px rgb(173, 173, 173);
+  display: block;
+  height: 115 px;
+  border-bottom: solid 1px rgb(173, 173, 173);
+  .nav-contact {
+    @include flexbox(space-between, center);
+
+    font-size: 0.875rem;
+    height: 40px;
+    width: 95%;
+    margin: auto;
+    .contact-link {
+      display: flex;
+      &__item {
+        margin-right: 1.5rem;
+        display: flex;
+        align-items: center;
+        a {
+          display: flex;
+          align-items: center;
+        }
+        &--image {
+          margin-right: 0.5rem;
+
+          height: 16px;
+        }
+        &--icon {
+          margin-right: 0.5rem;
+
+          height: 16px;
+        }
+        &--content {
+          font-size: 0.875rem;
+        }
+      }
+    }
+
+    .contact-icon {
+      display: flex;
+      &__item {
+        margin-right: 35px;
+        &--icon {
+          height: 16px;
+        }
+      }
+    }
+  }
+  .nav-header {
+    @include flexbox(space-between, center);
+    height: 75px;
+    width: 95%;
+    margin: auto;
+    &__table {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      height: 100%;
+      width: 50%;
+      &--logo {
+        // margin-right: 50px;
+
+        font-size: 1.175rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+      }
+      &--item {
+        // margin-right: 50px;
+        display: flex;
+        align-items: center;
+
+        font-size: 0.8125rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        height: 100%;
+      }
+    }
+    &__search-box {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      width: 30%;
+      // padding-right: 35px;
+      &--icon {
+        width: 15%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        background-color: #f6f5f3;
+      }
+      &--input {
+        display: flex;
+        align-items: center;
+        width: 76%;
+        height: 100%;
+        background-color: #f6f5f3;
+        input {
+          background-color: #f6f5f3;
+          border: none;
+          height: 100%;
+          width: 95%;
+        }
+        .search-suggest {
+          position: absolute;
+          background-color: burlywood;
+          width: 100%;
+          height: 60%;
+          top: 115px;
+          left: 0;
+          display: flex;
+          justify-content: space-between;
+          opacity: 0;
+          pointer-events: none;
+          transform: translateY(-10px);
+          transition: all 0.4s ease;
+          &__sex {
+            flex: 1;
+            border-right: solid 1px rgb(173, 173, 173);
+            display: flex;
+            justify-content: space-between;
+            &--women {
+              flex: 1;
+              margin-left: 2.25rem;
+              li{
+                margin-top: 2.5rem;
+              }
+            }
+            &--men {
+              flex: 1;
+              li{
+                margin-top: 2.5rem;
+              }
+            }
+          }
+          &__product {
+            flex: 1;
+            margin-left: 2.25rem;
+            &--title{
+              margin-top: 2.5rem;
+            }
+            &--list-img{
+              .img-card{
+                
+              }
+            }
+          }
+        }
+      }
+    }
+    .nav-header__search-box--input input:focus + .search-suggest {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(0px);
+    }
+  }
+  // .search-suggest {
+  //   position: absolute;
+  //   height: 60%;
+  //   width: 100%;
+  //   background-color: burlywood;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   // opacity: 0;
+  //   // pointer-events: none;
+  //   // transform: translateY(10px);
+  //   // transition: all 0.4s ease;
+  //   &__sex {
+  //     flex: 1;
+  //     border-right: solid 1px rgb(173, 173, 173);
+  //     display: flex;
+  //     justify-content: space-between;
+  //     &--women {
+  //       flex: 1;
+  //     }
+  //     &--men {
+  //       flex: 1;
+  //     }
+  //   }
+  //   &__product {
+  //     flex: 1;
+  //   }
+  // }
 }

@@ -1,7 +1,8 @@
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import { FC } from 'react'
-import Link from 'next/link'
+import HeaderContact from './HeaderContact'
+import HeaderContent from './HeaderContent'
 
 Router.events.on('routeChangeStart', () => {
   NProgress.start()
@@ -12,13 +13,12 @@ Router.events.on('routeChangeError', () => NProgress.done())
 const Header: FC = () => {
   return (
     <header>
-      <nav>
-        <Link href="/">Homepage </Link>
-        <Link href="/new">New </Link>
-        <Link href="/women">Women </Link>
-        <Link href="/men">Men </Link>
-        <Link href="/art-of-living">Art Of Living </Link>
-        <Link href="/magazine">Magazine </Link>
+      <nav className="nav-contact">
+        <HeaderContact />
+      </nav>
+      <hr></hr>
+      <nav className="nav-header">
+        <HeaderContent />
       </nav>
     </header>
   )
