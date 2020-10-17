@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1602044185/luxury-shoping/home-page/magazine/107900510_3008076295908868_4587415478841918979_o_cno9xk.jpg",
+        "title": "#LVSS20",
+        "subtitle": "",
+        "link":"/magazine/acticles/1",
+        "content_link" : ""
+    },
+    {
+        "id": 2,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1602053245/luxury-shoping/home-page/magazine/81011459_2570777716305397_6482906057004810240_o_lvjk8o.jpg",
+        "title": "$LVSS21",
+        "subtitle": "",
+        "link":"/magazine/acticles/2",
+        "content_link" : ""
+    },
+    {
+        "id": 3,
+        "image": "https://res.cloudinary.com/dnzsa2z7b/image/upload/v1602044185/luxury-shoping/home-page/magazine/86175339_2651467334903101_9076076408316362752_o_zn0kce.jpg",
+        "title": "$LVSS22",
+        "subtitle": "",
+        "link":"/magazine/acticles/3",
+        "content_link" : ""
+    }
+]

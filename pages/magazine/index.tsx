@@ -1,9 +1,7 @@
 import { FC } from 'react'
 import { DefaultLayout } from 'layout'
 
-type Props = {}
-
-const MagazinePage: FC<Props> = () => {
+const MagazinePage: FC = () => {
   return <DefaultLayout>This is MAGAZINE page</DefaultLayout>
 }
 
