@@ -18,7 +18,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
     <>
       <Head>
         <title>Luxury Shopping</title>
-        {/* <link rel="icon" href="/image/favicon.ico" /> */}
+        <link rel="icon" href="/image/favicon.ico" />
         <link
           rel="apple-touch-icon"
           sizes="57x57"

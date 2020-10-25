@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Categories",
+    "contents": [
+      "Handbags and Small Leather Goods",
+      "Accessories",
+      "Shoes",
+      "Ready-to-Wear"
+      ]
+  },
+  {
+    "id": 2,
+    "title": "Color",
+    "contents": [""]
+  }
+]
