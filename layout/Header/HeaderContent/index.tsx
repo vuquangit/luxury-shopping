@@ -1,14 +1,17 @@
 import { FC } from 'react'
 import ContentTable from './ContentTable'
 import ContentInput from './ContentInput'
+type Props = {
+  handleOpenMenu: (data: string) => void
+}
 
-const index: FC = () => {
+const HeaderContent: FC<Props> = ({ handleOpenMenu }) => {
   return (
     <>
-      <ContentTable />
-      <ContentInput />
+      <ContentTable handleOpenMenu={handleOpenMenu} />
+      <ContentInput handleOpenMenu={handleOpenMenu} />
     </>
   )
 }
 
-export default index
+export default HeaderContent

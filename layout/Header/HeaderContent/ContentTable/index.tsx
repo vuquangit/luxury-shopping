@@ -1,25 +1,37 @@
 import { FC } from 'react'
-import Link from 'next/link'
+type Props = {
+  handleOpenMenu: (data: string) => void
+}
 
-const ContentTable: FC = () => {
+const ContentTable: FC<Props> = ({ handleOpenMenu }) => {
+  const dataTable = [
+    { label: 'louis vuitton', id: 1 },
+    { label: 'new', id: 2 },
+    { label: 'women', id: 3 },
+    { label: 'men', id: 4 },
+    { label: 'art of living', id: 5 },
+    { label: 'magazine', id: 6 },
+  ]
+  const handleOnclick = (item: any) => {
+    handleOpenMenu(item.label)
+  }
   return (
     <ul className="nav-header__table">
-      <li className="nav-header__table--logo">louis vuitton</li>
-      <li className="nav-header__table--item">
-        <Link href="/new">new </Link>
-      </li>
-      <li className="nav-header__table--item">
-        <Link href="/women">women </Link>
-      </li>
-      <li className="nav-header__table--item">
-        <Link href="/men">men </Link>
-      </li>
-      <li className="nav-header__table--item">
-        <Link href="/art-of-living">art of living </Link>
-      </li>
-      <li className="nav-header__table--item">
-        <Link href="/magazine">magazine </Link>
-      </li>
+      {dataTable.map((item) =>
+        item.label === 'louis vuitton' ? (
+          <li key={item.id} className="nav-header__table--logo">
+            {item.label}
+          </li>
+        ) : (
+          <li
+            onClick={() => handleOnclick(item)}
+            key={item.id}
+            className="nav-header__table--item"
+          >
+            {item.label}
+          </li>
+        )
+      )}
     </ul>
   )
 }

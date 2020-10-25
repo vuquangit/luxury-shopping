@@ -4,7 +4,7 @@ const flow = require('lodash/flow')
 const {
   PHASE_DEVELOPMENT_SERVER,
   PHASE_PRODUCTION_BUILD,
-  PHASE_EXPORT
+  PHASE_EXPORT,
 } = require('next/constants')
 const {
   WebpackBundleSizeAnalyzerPlugin,
@@ -22,11 +22,12 @@ const withEnv = (config = {}) => {
   // when `next build` or `npm run build` is used
   const isStaging =
     config.phase === PHASE_PRODUCTION_BUILD && process.env.STAGING === '1'
-    // when `next export or `npm run export is used
-  const isExport =
-    config.phase === PHASE_EXPORT
+  // when `next export or `npm run export is used
+  const isExport = config.phase === PHASE_EXPORT
 
-  console.log(`isDev:${isDev}  isProd:${isProd}   isStaging:${isStaging}  isExport:${isExport}`)
+  console.log(
+    `isDev:${isDev}  isProd:${isProd}   isStaging:${isStaging}  isExport:${isExport}`
+  )
 
   const env = {}
   config.env = {
