@@ -1,24 +1,23 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
+import ChooseArtItem from './ChooseArtItem'
+import OpenArtItem from './OpenArtItem'
 
 const ArtMenu: FC = () => {
+  const [choose, setChoose] = useState('Trunks and Travel')
+  const handleChooseItem = (data: string) => {
+    setChoose(data)
+  }
   return (
     <>
       <div className="art-detail">
         <div className="art-detail__product">
           <div className="art-detail__product--container">
-            <p>Trunks and Travel</p>
-            <p>Tech Accessories</p>
-            <p>Games and Collectables</p>
-            <p>Home</p>
-            <p>Books and Writing</p>
+            <ChooseArtItem handleChooseItem={handleChooseItem} />
           </div>
         </div>
         <div className="art-detail__product-detail">
           <div className="art-detail__product-detail--container">
-            <p>Trunks and Boxes</p>
-            <p>Rolling Luggage</p>
-            <p>Softsided Luggage and Duffle Bags</p>
-            <p>Travel Accessories and Organisers</p>
+            <OpenArtItem flagChoose={choose} />
           </div>
         </div>
         <div className="art-detail__img">

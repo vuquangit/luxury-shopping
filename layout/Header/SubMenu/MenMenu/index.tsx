@@ -1,31 +1,23 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
+import ChooseMenItem from './ChooseMenItem'
+import OpenMenItem from './OpenMenItem'
 
 const MenMenu: FC = () => {
+  const [choose, setChoose] = useState('Gifts for Men')
+  const handleChooseItem = (data: string) => {
+    setChoose(data)
+  }
   return (
     <>
       <div className="men-detail">
         <div className="men-detail__product">
           <div className="men-detail__product--container">
-            <p>Gifts for Men</p>
-            <p>Highlights</p>
-            <p>Handbags</p>
-            <p>Wallets and Small Leather Goods</p>
-            <p>Fragrances</p>
-            <p>Ready-to-Wear</p>
-            <p>Accessories</p>
-            <p>Shoes</p>
-            <p>Jewellery</p>
-            <p>Watches</p>
-            <p>Travel</p>
-            <p>Fashion Shows</p>
-            <p>Personalisation</p>
+            <ChooseMenItem handleChooseItem={handleChooseItem} />
           </div>
         </div>
         <div className="men-detail__product-detail">
           <div className="men-detail__product-detail--container">
-            <p>Christmas Gifts for Her</p>
-            <p>The Essentials</p>
-            <p>Personalisation</p>
+            <OpenMenItem flagChoose={choose} />
           </div>
         </div>
         <div className="men-detail__img">
