@@ -4,7 +4,7 @@ import OpenArtItem from './OpenArtItem'
 
 const ArtMenu: FC = () => {
   const [choose, setChoose] = useState('Trunks and Travel')
-  const handleChooseItem = (data: string) => {
+  const handleChooseItem = (data: any) => {
     setChoose(data)
   }
   return (

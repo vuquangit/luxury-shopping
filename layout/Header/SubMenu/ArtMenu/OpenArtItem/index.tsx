@@ -50,7 +50,7 @@ const index: FC<Props> = ({ flagChoose }) => {
   return (
     <>
       {_getData().map((item) => (
-        <p key={item.id}>{item}</p>
+        <p key={item}>{item}</p>
       ))}
     </>
   )

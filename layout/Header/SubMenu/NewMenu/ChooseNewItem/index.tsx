@@ -1,6 +1,6 @@
 import { FC } from 'react'
 type Props = {
-  handleChooseItem: () => void
+  handleChooseItem: FC
 }
 const index: FC<Props> = ({ handleChooseItem }) => {
   const data = [
