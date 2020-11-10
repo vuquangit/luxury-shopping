@@ -1,0 +1,36 @@
+.contact-icon {
+  display: flex;
+  &__item {
+    margin-right: 35px;
+    &--icon {
+      height: 16px;
+    }
+  }
+}
+.contact-info {
+  display: flex;
+
+  &__item {
+    margin-right: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+}
+.contact-link {
+  display: flex;
+  align-items: center;
+
+  &__image {
+    margin-right: 0.5rem;
+    height: 16px;
+  }
+
+  &__icon {
+    margin-right: 0.5rem;
+    height: 16px;
+  }
+
+  &__content {
+    font-size: 0.875rem;
+  }
+}

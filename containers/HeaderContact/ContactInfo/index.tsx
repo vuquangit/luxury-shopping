@@ -5,7 +5,7 @@ import {
   faQuestionCircle,
 } from '@fortawesome/free-solid-svg-icons'
 
-import ContactLinkContent from './ContactLinkContent'
+import ContactInfoContent from './ContactInfoContent'
 
 interface IContactLink {
   id: number
@@ -15,7 +15,7 @@ interface IContactLink {
   contact: string
 }
 
-const ContactLink: FC = () => {
+const ContactInfo: FC = () => {
   const listData: IContactLink[] = [
     {
       id: 1,
@@ -45,15 +45,15 @@ const ContactLink: FC = () => {
   ]
 
   return (
-    <ul className="contact-link">
+    <ul className="contact-info">
       {listData.map((item) => (
-        <li key={item.id} className="contact-link__item">
+        <li key={item.id} className="contact-info__item">
           {item.link ? (
-            <a href={item.link}>
-              <ContactLinkContent {...item} />
+            <a href={item.link} className="contact-link">
+              <ContactInfoContent {...item} />
             </a>
           ) : (
-            <ContactLinkContent {...item} />
+            <ContactInfoContent {...item} />
           )}
         </li>
       ))}
@@ -61,4 +61,4 @@ const ContactLink: FC = () => {
   )
 }
 
-export default ContactLink
+export default ContactInfo

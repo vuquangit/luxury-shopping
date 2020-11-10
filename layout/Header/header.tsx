@@ -1,9 +1,12 @@
-import { FC, useState } from 'react'
+import { FC, useState, useRef, useEffect } from 'react'
 import Router from 'next/router'
 import NProgress from 'nprogress'
-import HeaderContact from './HeaderContact'
-import HeaderContent from './HeaderContent'
-import SubMenu from './SubMenu'
+import HeaderContact from 'containers/HeaderContact'
+import HeaderContent from 'containers/HeaderContent'
+import HeaderSubMenu from 'containers/HeaderSubMenu'
+import HeaderSearchMenu from 'containers/HeaderSearchMenu'
+
+import { headerDataNav, TTypeSubMenu } from './mocks/HeaderDataNav'
 
 Router.events.on('routeChangeStart', () => {
   NProgress.start()
@@ -13,30 +16,54 @@ Router.events.on('routeChangeError', () => NProgress.done())
 
 const Header: FC = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false)
-  const [dataReceive, setDataReceive] = useState('')
-  const handleOpenMenu = (data: string) => {
-    // console.log('header nhan dc:',data)
-    setDataReceive(data)
+  const [typeSubMenu, setTypeSubMenu] = useState<TTypeSubMenu>('new')
+
+  const handleOpenMenu = (typeSubMenu: TTypeSubMenu) => {
+    setTypeSubMenu(typeSubMenu)
     setIsOpenMenu(true)
   }
+
   const handleCloseMenu = () => setIsOpenMenu(false)
 
+  const refSubMenu = useRef(null)
+
+  const handleClickOutside = (event: any) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    if (refSubMenu.current && !refSubMenu.current.contains(event.target)) {
+      handleCloseMenu()
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true)
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true)
+    }
+  }, [])
+
   return (
-    <header>
+    <header className="header">
       <div className="header-container">
-        <nav className="nav-contact">
+        <nav className="header-contact">
           <HeaderContact />
         </nav>
         <hr></hr>
-        <nav className="nav-header">
+        <nav className="header-navigation">
           <HeaderContent handleOpenMenu={handleOpenMenu} />
         </nav>
         <hr></hr>
         {isOpenMenu && (
-          <SubMenu
-            dataReceive={dataReceive}
-            handleCloseMenu={handleCloseMenu}
-          />
+          <div ref={refSubMenu}>
+            {typeSubMenu === 'input' ? (
+              <HeaderSearchMenu />
+            ) : (
+              <HeaderSubMenu
+                dataSubMenu={headerDataNav[typeSubMenu]}
+                typeSubMenu={typeSubMenu}
+              />
+            )}
+          </div>
         )}
       </div>
     </header>

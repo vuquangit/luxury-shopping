@@ -1,0 +1,87 @@
+.men {
+  width: 50%;
+  &__content {
+    display: flex;
+    flex-flow: column;
+    height: 80%;
+    justify-content: space-around;
+    &--title {
+      font-weight: bold;
+    }
+  }
+}
+.search-suggest {
+  // position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px rgb(173, 173, 173);
+  &__sex {
+    flex: 1;
+    border-right: solid 1px rgb(173, 173, 173);
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    &--container {
+      width: 90%;
+      height: 90%;
+      margin: auto;
+      display: flex;
+    }
+  }
+  &__product {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+}
+.women {
+  width: 50%;
+  &__content {
+    display: flex;
+    flex-flow: column;
+    height: 80%;
+    justify-content: space-around;
+    &--title {
+      font-weight: bold;
+    }
+  }
+}
+.product-container {
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  &__title {
+    font-weight: bold;
+  }
+  &__list-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 70%;
+  }
+}
+.img-card {
+  height: 100px;
+  width: 275px;
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    &--image {
+      height: 100%;
+      border: solid 1px rgb(173, 173, 173);
+    }
+    &--content {
+      margin-left: 1.5rem;
+    }
+  }
+}

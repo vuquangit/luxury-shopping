@@ -1,9 +1,9 @@
 import { FC } from 'react'
 type Props = {
-  handleOpenMenu: (data: string) => void
+  handleOpenMenu: (data: 'men' | 'women' | 'input') => void
 }
 
-const ContentTable: FC<Props> = ({ handleOpenMenu }) => {
+const ContentNav: FC<Props> = ({ handleOpenMenu }) => {
   const dataTable = [
     { label: 'louis vuitton', id: 1 },
     { label: 'new', id: 2 },
@@ -16,17 +16,17 @@ const ContentTable: FC<Props> = ({ handleOpenMenu }) => {
     handleOpenMenu(item.label)
   }
   return (
-    <ul className="nav-header__table">
+    <ul className="main-navigation">
       {dataTable.map((item) =>
         item.label === 'louis vuitton' ? (
-          <li key={item.id} className="nav-header__table--logo">
+          <li key={item.id} className="main-navigation__logo">
             {item.label}
           </li>
         ) : (
           <li
             onClick={() => handleOnclick(item)}
             key={item.id}
-            className="nav-header__table--item"
+            className="main-navigation__content"
           >
             {item.label}
           </li>
@@ -36,4 +36,4 @@ const ContentTable: FC<Props> = ({ handleOpenMenu }) => {
   )
 }
 
-export default ContentTable
+export default ContentNav

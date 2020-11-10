@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import ContactIcon from './ContactIcon'
-import ContactLink from './ContactLink'
+import ContactInfo from './ContactInfo'
 
 const HeaderContact: FC = () => {
   return (
     <>
-      <ContactLink />
+      <ContactInfo />
       <ContactIcon />
     </>
   )
