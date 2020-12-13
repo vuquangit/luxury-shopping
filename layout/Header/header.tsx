@@ -1,12 +1,14 @@
-import { FC, useState, useRef, useEffect } from 'react'
+import { FC, useState, useRef, useEffect, useContext } from 'react'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import HeaderContact from 'containers/HeaderContact'
 import HeaderContent from 'containers/HeaderContent'
 import HeaderSubMenu from 'containers/HeaderSubMenu'
 import HeaderSearchMenu from 'containers/HeaderSearchMenu'
+import { AdminStore } from 'layout/AdminStoreProvider'
 
 import { headerDataNav, TTypeSubMenu } from './mocks/HeaderDataNav'
+import MenuContentMobile from 'containers/MenuContentMobile'
 
 Router.events.on('routeChangeStart', () => {
   NProgress.start()
@@ -15,8 +17,10 @@ Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
 
 const Header: FC = () => {
-  const [isOpenMenu, setIsOpenMenu] = useState(false)
+  const [windowSize, setWindowSize] = useState(0)
+  const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
   const [typeSubMenu, setTypeSubMenu] = useState<TTypeSubMenu>('new')
+  const { state } = useContext(AdminStore)
 
   const handleOpenMenu = (typeSubMenu: TTypeSubMenu) => {
     setTypeSubMenu(typeSubMenu)
@@ -42,28 +46,58 @@ const Header: FC = () => {
     }
   }, [])
 
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      setWindowSize(window.innerWidth)
+    }
+
+    // Add event listener
+    window.addEventListener('resize', handleResize)
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize()
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener('resize', handleResize)
+  }, []) // Empty array ensures that effect is only run on mount
+
   return (
     <header className="header">
-      <div className="header-container">
+      <div className="header__container">
         <nav className="header-contact">
           <HeaderContact />
         </nav>
-        <hr></hr>
-        <nav className="header-navigation">
-          <HeaderContent handleOpenMenu={handleOpenMenu} />
-        </nav>
-        <hr></hr>
-        {isOpenMenu && (
-          <div ref={refSubMenu}>
-            {typeSubMenu === 'input' ? (
-              <HeaderSearchMenu />
-            ) : (
-              <HeaderSubMenu
-                dataSubMenu={headerDataNav[typeSubMenu]}
-                typeSubMenu={typeSubMenu}
+        {state.openBar && windowSize <= 425 ? (
+          <MenuContentMobile />
+        ) : (
+          <nav className="header-navigation">
+            <div className="header-navigation__container">
+              <HeaderContent
+                handleOpenMenu={handleOpenMenu}
+                isOpenMenu={isOpenMenu}
               />
+            </div>
+          </nav>
+        )}
+
+        {windowSize <= 425 ? (
+          ''
+        ) : (
+          <>
+            {isOpenMenu && (
+              <div ref={refSubMenu}>
+                {typeSubMenu === 'input' ? (
+                  <HeaderSearchMenu />
+                ) : (
+                  <HeaderSubMenu
+                    dataSubMenu={headerDataNav[typeSubMenu]}
+                    typeSubMenu={typeSubMenu}
+                  />
+                )}
+              </div>
             )}
-          </div>
+          </>
         )}
       </div>
     </header>

@@ -15,12 +15,12 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "sourceMap": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "types": ["node", "jest"]
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "test/testUtils.js"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "test/testUtils.js", "StateProvider/StateProvider.js"]
 }

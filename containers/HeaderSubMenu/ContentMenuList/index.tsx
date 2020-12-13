@@ -8,9 +8,19 @@ type Props = {
 const ContentMenuList: FC<Props> = ({ data }) => {
   return (
     <>
-      {data.dataItem.map((item: any) => (
-        <p key={item}>{item}</p>
-      ))}
+      <ul className="content-menu">
+        {data.dataItem.map((item: any) =>
+          item === 'BY STYLE' ? (
+            <li className="content-menu__item" key={item}>
+              <strong>{item}</strong>
+            </li>
+          ) : (
+            <li className="content-menu__item" key={item}>
+              {item}
+            </li>
+          )
+        )}
+      </ul>
     </>
   )
 }

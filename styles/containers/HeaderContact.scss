@@ -34,3 +34,24 @@
     font-size: 0.875rem;
   }
 }
+.contact-responsive {
+  width: 100%;
+  &__icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    &--item {
+      justify-content: space-between;
+      width: 60px;
+      display: flex;
+    }
+    &--logo {
+      text-transform: uppercase;
+      h5 {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+  }
+}

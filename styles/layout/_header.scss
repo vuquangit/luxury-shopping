@@ -1,17 +1,16 @@
 .header {
   display: block;
   margin-bottom: 115px;
-  // border-bottom: solid 1px rgb(173, 173, 173);
-  // position: relative;
   box-sizing: border-box;
   max-width: 100vh;
 
-  &-container {
+  &__container {
     position: fixed;
     width: 100%;
     height: 116px;
     background-color: white;
     z-index: 1000;
+    border-bottom: solid 1px rgb(173, 173, 173);
   }
 
   .header-contact {
@@ -23,9 +22,27 @@
     margin: auto;
   }
   .header-navigation {
-    @include flexbox(space-between, center);
-    height: 75px;
-    width: 95%;
-    margin: auto;
+    width: 100%;
+    border-top: solid 1px rgb(173, 173, 173);
+    &__container {
+      @include flexbox(space-between, center);
+      height: 75px;
+      width: 95%;
+      margin: auto;
+    }
+  }
+  @media only screen and (max-width: 425px) {
+    .header-navigation {
+      border-top: none;
+      &__container {
+        width: 90%;
+        height: 40%;
+      }
+    }
+    .header-contact {
+      height: 50%;
+      width: 90%;
+      align-items: unset;
+    }
   }
 }

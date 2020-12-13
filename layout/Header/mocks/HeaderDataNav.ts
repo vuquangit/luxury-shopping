@@ -2,6 +2,7 @@ export const headerDataNav: ISubMenuList = {
   new: [
     {
       label: 'For Women',
+      labelClass: 'classItem',
       dataItem: [
         'The Latest',
         'Since 1854 Collection',
@@ -12,6 +13,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'For Men',
+      labelClass: 'item',
       dataItem: [
         'The Latest',
         'Damier Graphite Giant',
@@ -25,6 +27,7 @@ export const headerDataNav: ISubMenuList = {
   women: [
     {
       label: 'Gifts for Women',
+      labelClass: 'classItem',
       dataItem: [
         'Christmas Gifts for Her',
         'The Essentials',
@@ -34,6 +37,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Highlights',
+      labelClass: 'item',
       dataItem: [
         'The Since 1854 Collection',
         'LV Crafty Collection',
@@ -43,6 +47,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Handbags',
+      labelClass: 'item',
       dataItem: [
         'Iconic Monogram Bags',
         'Capucines',
@@ -54,6 +59,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Wallets and Small Leather Goods',
+      labelClass: 'item',
       dataItem: [
         'All Wallets and Small Leather Goods',
         'Long Wallets',
@@ -69,6 +75,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Fragrances',
+      labelClass: 'item',
       dataItem: [
         'Discover the Campaign',
         'Experience Cologne Perfumes',
@@ -84,6 +91,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Ready-to-Wear',
+      labelClass: 'item',
       dataItem: [
         'View by Look',
         'Must-Haves and Essentials',
@@ -103,6 +111,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Accessories',
+      labelClass: 'item',
       dataItem: [
         'New This Season',
         'How To Wear Textiles',
@@ -121,6 +130,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Shoes',
+      labelClass: 'item',
       dataItem: [
         'Autumn Selection',
         'LV Archlight',
@@ -139,6 +149,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Jewellery',
+      labelClass: 'item',
       dataItem: [
         'LV Volt Collection',
         'Louis Vuitton for Unicef',
@@ -156,6 +167,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Watches',
+      labelClass: 'item',
       dataItem: [
         'Tambour Moon Dual Time',
         'BY STYLE',
@@ -168,6 +180,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Travel',
+      labelClass: 'item',
       dataItem: [
         'Horizon Soft',
         'BY STYLE',
@@ -180,6 +193,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Fashion Shows',
+      labelClass: 'item',
       dataItem: [
         'Spring-Summer 2021 Show',
         'Fall-Winter 2020 Show',
@@ -190,6 +204,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Personalisation',
+      labelClass: 'item',
       dataItem: [
         'Handbags & Travel',
         'Small Leather Goods',
@@ -202,6 +217,7 @@ export const headerDataNav: ISubMenuList = {
   men: [
     {
       label: 'Gifts for Men',
+      labelClass: 'classItem',
       dataItem: [
         'Christmas Gifts for Him',
         'The Essentials',
@@ -211,6 +227,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Highlights',
+      labelClass: 'item',
       dataItem: [
         'Damier Graphite Giant',
         'Fall-Winter 2020 Show',
@@ -221,6 +238,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Bags',
+      labelClass: 'item',
       dataItem: [
         'Taigarama Collection',
         'BY STYLE',
@@ -236,6 +254,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Wallets and Small Leather Goods',
+      labelClass: 'item',
       dataItem: [
         'Taigarama Collection',
         'BY STYLE',
@@ -252,6 +271,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Fragrances',
+      labelClass: 'item',
       dataItem: [
         'Men’s Fragrances',
         'Experience Cologne Perfumes',
@@ -267,6 +287,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Ready-to-Wear',
+      labelClass: 'item',
       dataItem: [
         'View by Look',
         'Louis Vuitton Staples Edition',
@@ -286,6 +307,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Accessories',
+      labelClass: 'item',
       dataItem: [
         'New This Season',
         'BY STYLE',
@@ -302,6 +324,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Shoes',
+      labelClass: 'item',
       dataItem: [
         'LV Trainers',
         'BY STYLE',
@@ -316,6 +339,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Watches and Jewellery',
+      labelClass: 'item',
       dataItem: [
         'LV Volt Collection',
         'Tambour Moon Dual Time',
@@ -331,6 +355,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Travel',
+      labelClass: 'item',
       dataItem: [
         'Horizon Soft',
         'BY STYLE',
@@ -343,6 +368,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Fashion Shows',
+      labelClass: 'item',
       dataItem: [
         'Fashion Show Selection',
         'Spring-Summer 2021 Show in Tokyo',
@@ -354,6 +380,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Personalisation',
+      labelClass: 'item',
       dataItem: [
         'Bags & Travel',
         'Small Leather Goods',
@@ -368,6 +395,7 @@ export const headerDataNav: ISubMenuList = {
   'art of living': [
     {
       label: 'Trunks and Travel',
+      labelClass: 'classItem',
       dataItem: [
         'Trunks and Boxes',
         'Rolling Luggage',
@@ -378,16 +406,19 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Tech Accessories',
+      labelClass: 'item',
       dataItem: ['Connected Objects', 'Phone Holders and Cases'],
       id: 2,
     },
     {
       label: 'Games and Collectables',
+      labelClass: 'item',
       dataItem: ['Games', 'Sporting Goods', 'Collector Items'],
       id: 3,
     },
     {
       label: 'Home',
+      labelClass: 'item',
       dataItem: [
         'Objets Nomades – The Story',
         'Objets Nomades – The Collection',
@@ -401,6 +432,7 @@ export const headerDataNav: ISubMenuList = {
     },
     {
       label: 'Books and Writing',
+      labelClass: 'item',
       dataItem: [
         'Hard Cover Books',
         'City Guides and Travel Books',
@@ -416,6 +448,7 @@ export type TTypeSubMenu = 'men' | 'women' | 'input' | 'new' | 'art of living'
 
 export interface ISubMenuItem {
   label: string
+  labelClass: string
   dataItem: string[]
   id: number
 }

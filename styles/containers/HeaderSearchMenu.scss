@@ -1,23 +1,19 @@
-.men {
-  width: 50%;
-  &__content {
-    display: flex;
-    flex-flow: column;
-    height: 80%;
-    justify-content: space-around;
-    &--title {
-      font-weight: bold;
-    }
-  }
+.search-suggest-container {
+  width: 100%;
+  height: 350px;
+  animation-name: openInput;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  overflow: hidden;
+  border-bottom: solid 1px rgb(173, 173, 173);
 }
 .search-suggest {
-  // position: absolute;
   background-color: white;
   width: 100%;
   height: 350px;
   display: flex;
   justify-content: space-between;
-  border-bottom: solid 1px rgb(173, 173, 173);
+
   &__sex {
     flex: 1;
     border-right: solid 1px rgb(173, 173, 173);
@@ -37,6 +33,26 @@
     justify-content: center;
     align-items: center;
     flex: 1;
+  }
+}
+@keyframes openInput {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 350px;
+  }
+}
+.men {
+  width: 50%;
+  &__content {
+    display: flex;
+    flex-flow: column;
+    height: 80%;
+    justify-content: space-around;
+    &--title {
+      font-weight: bold;
+    }
   }
 }
 .women {
@@ -66,11 +82,13 @@
     flex-wrap: wrap;
     justify-content: space-between;
     height: 70%;
+    overflow: hidden;
   }
 }
 .img-card {
   height: 100px;
   width: 275px;
+
   &__link {
     display: flex;
     align-items: center;
