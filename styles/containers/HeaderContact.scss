@@ -55,3 +55,16 @@
     }
   }
 }
+@media screen and (max-width: 768px) and (min-width: 426px) {
+  .contact-icon {
+    width: 23%;
+    display: flex;
+    justify-content: space-between;
+    &__item {
+      margin-right: 0;
+      &--icon {
+        height: 16px;
+      }
+    }
+  }
+}

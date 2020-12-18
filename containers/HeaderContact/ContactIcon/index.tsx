@@ -31,7 +31,7 @@ const ContactIcon: FC = () => {
     },
   ]
   return (
-    <div>
+    <>
       <ul className="contact-icon">
         {iconData.map((item) => (
           <li className="contact-icon__item" key={item.id}>
@@ -41,7 +41,7 @@ const ContactIcon: FC = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   )
 }
 

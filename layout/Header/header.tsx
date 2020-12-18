@@ -6,6 +6,8 @@ import HeaderContent from 'containers/HeaderContent'
 import HeaderSubMenu from 'containers/HeaderSubMenu'
 import HeaderSearchMenu from 'containers/HeaderSearchMenu'
 import { AdminStore } from 'layout/AdminStoreProvider'
+import SubMenuListMobile from 'containers/SubMenuListMobile'
+import ContentSubMenuListMobile from 'containers/ContentSubMenuListMobile'
 
 import { headerDataNav, TTypeSubMenu } from './mocks/HeaderDataNav'
 import MenuContentMobile from 'containers/MenuContentMobile'
@@ -21,7 +23,7 @@ const Header: FC = () => {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
   const [typeSubMenu, setTypeSubMenu] = useState<TTypeSubMenu>('new')
   const { state } = useContext(AdminStore)
-
+  // console.log(state)
   const handleOpenMenu = (typeSubMenu: TTypeSubMenu) => {
     setTypeSubMenu(typeSubMenu)
     setIsOpenMenu(true)
@@ -69,7 +71,11 @@ const Header: FC = () => {
           <HeaderContact />
         </nav>
         {state.openBar && windowSize <= 425 ? (
-          <MenuContentMobile />
+          <>
+            <MenuContentMobile />
+            {state.openSub ? <SubMenuListMobile /> : ''}
+            {state.openContentSub ? <ContentSubMenuListMobile /> : ''}
+          </>
         ) : (
           <nav className="header-navigation">
             <div className="header-navigation__container">

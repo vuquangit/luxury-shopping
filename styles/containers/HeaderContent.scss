@@ -85,3 +85,29 @@
     background-color: #f6f5f3;
   }
 }
+@media screen and (max-width: 768px) and (min-width: 426px) {
+  .main-navigation {
+    width: 68%;
+    &__logo {
+      font-size: 1.125rem;
+    }
+    &__content {
+      letter-spacing: 0.05rem;
+      line-height: 1rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+  }
+  .search-box {
+    &__search-icon {
+    }
+
+    &__input-container {
+      width: 100%;
+
+      &--search-input {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -18,7 +18,7 @@ interface IContactLink {
 }
 
 const MenuContentMobile: FC = () => {
-  const { state, dispatch } = useContext(AdminStore)
+  const { dispatch } = useContext(AdminStore)
   const listData: IContactLink[] = [
     { label: 'new', id: 1, link: null, icon: null, contact: '' },
     { label: 'women', id: 2, link: null, icon: null, contact: '' },
@@ -55,10 +55,11 @@ const MenuContentMobile: FC = () => {
       contact: 'Sustainability',
     },
   ]
-  const handleOpenSubMobile = () => {
+  const handleOpenSubMobile = (data: string) => {
     dispatch({
-      type: 'ChangeSub',
-      payload: !state.openSub,
+      type: 'ChangeSubMenuMobile',
+      payload: true,
+      status: data,
     })
   }
   return (
@@ -76,8 +77,8 @@ const MenuContentMobile: FC = () => {
               <ContactInfoContent {...item} />
             )}
 
-            {['women', 'men', 'art of living'].includes(item.label) ? (
-              <p onClick={handleOpenSubMobile}> &gt; </p>
+            {['new', 'women', 'men', 'art of living'].includes(item.label) ? (
+              <p onClick={() => handleOpenSubMobile(item.label)}> &#8883; </p>
             ) : (
               ''
             )}

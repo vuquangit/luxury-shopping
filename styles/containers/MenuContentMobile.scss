@@ -1,7 +1,10 @@
 .menu-content-mobile {
   height: calc(100vh - 57.5px);
+  width: 100%;
   background: white;
   border-top: 1px solid rgb(173, 173, 173);
+  position: absolute;
+  z-index: 0;
   &__container {
     width: 90%;
     height: 100%;
@@ -15,6 +18,10 @@
       align-items: center;
       text-transform: uppercase;
       justify-content: space-between;
+      border-bottom: 1px solid rgb(173, 173, 173);
+      p {
+        font-size: 30px;
+      }
     }
   }
 }
