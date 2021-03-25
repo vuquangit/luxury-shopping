@@ -1,0 +1,108 @@
+.accordion {
+  width: 100%;
+
+  .panel {
+    &__label {
+      position: relative;
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 16px 6.4vw;
+      font-weight: 700;
+      font-size: 17px;
+      font-family: inherit;
+      transition: color 0.2s linear;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        right: 6.4vw;
+        top: 50%;
+        width: 16px;
+        height: 2px;
+        margin-top: -var(height);
+        margin-right: 8px;
+        background-color: #000;
+      }
+
+      &:before {
+        transform: rotate(-90deg);
+        transition: transform 0.35s cubic-bezier(0.65, 0.05, 0.36, 1);
+      }
+    }
+
+    &[aria-expanded='true'] {
+      .panel__content {
+        opacity: 1;
+      }
+
+      .panel__label {
+        &:before {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    &__inner {
+      overflow: hidden;
+      background: #f6f5f3;
+      will-change: height;
+      transition: height 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+    }
+
+    &__content {
+      padding: 16px 6.4vw;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.3s linear 0.18s;
+
+      &--item {
+        display: flex;
+        align-items: center;
+        margin: 0 8px 8px 0;
+      }
+
+      .button-trigger {
+        padding: 8px 8px 8px 16px;
+        margin-left: -16px;
+      }
+
+      .button-trigger.--selected {
+        @include flexbox(flex-start, center);
+        flex-direction: row;
+
+        background-color: #19110b;
+        border: none;
+        border-radius: 0;
+        color: #fff;
+      }
+
+      .filter-close-icon {
+          width: 16px;
+          height: 16px;
+          margin-left: 8px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 3px;
+    }
+
+    &:not(:last-child):after {
+        content: "";
+        display: block;
+        height: 0;
+      border-bottom: 1px solid #eae8e4;
+      margin: 0 6.4vw;
+    }
+  }
+}
