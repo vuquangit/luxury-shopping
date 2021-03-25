@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders product item 1`] = `
+<a
+  className="home-product"
+  href="/women/handbags"
+>
+  <div
+    className="lazyImage"
+    style={
+      Object {
+        "paddingTop": "100%",
+      }
+    }
+  >
+    <div
+      className="lazyImage__img home-product__image"
+      style={
+        Object {
+          "backgroundImage": "url(https://res.cloudinary.com/dnzsa2z7b/image/upload/v1601808438/luxury-shoping/home-page/new-products/93842498_1376660662534221_6427143203815686144_o_lm1fzo.jpg)",
+        }
+      }
+    />
+  </div>
+  <div
+    className="home-product__content"
+  >
+    <div
+      className="home-product__content--title"
+    >
+      PETITE MALLE SOUPLE EMPREINTE
+    </div>
+    <div
+      className="home-product__content--subtitle"
+    >
+      Shop the Exclusive Prelaunch Now
+    </div>
+    
+  </div>
+</a>
+`;

@@ -1,0 +1,34 @@
+.homepage-new {
+  @include flexbox(stretch, stretch);
+  flex-direction: column;
+
+  @include respond-from(lg) {
+    flex-direction: row;
+  }
+}
+
+@include respond-from(lg) {
+  .homepage-new > * {
+    width: 50%;
+  }
+
+  .homepage-new > :first-child {
+    border-right: 1px solid $border-color;
+  }
+
+  .homepage-new > :nth-child(2) {
+    @include flexbox(stretch, stretch);
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .homepage-new > :nth-child(2) .home-product {
+    height: auto;
+    flex: 1 0 auto;
+  }
+
+  .homepage-new > :nth-child(2) .home-product:first-child {
+    display: flex;
+    align-items: center;
+  }
+}

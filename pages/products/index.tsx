@@ -1,9 +1,7 @@
 import { FC } from 'react'
 import { DefaultLayout } from 'layout'
 
-type Props = {}
-
-const ProductsPage: FC<Props> = () => {
+const ProductsPage: FC = () => {
   return <DefaultLayout>This is Products page</DefaultLayout>
 }
 
